@@ -38,3 +38,13 @@ sc = StandardScaler()
 
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
+
+# Decision Tree Classifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
+cart = DecisionTreeClassifier()
+cart_model = cart.fit(X_train, y_train)
+
+y_pred = cart_model.predict(X_test)
+print(accuracy_score(y_test, y_pred))
+
